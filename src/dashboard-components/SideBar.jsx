@@ -176,7 +176,7 @@ function SideBar() {
             ))}
 
             {/* Log Out Section */}
-            <div className="mt-56">
+            <div className="mt-40">
               <p className="flex items-center cursor-pointer text-[#00304a]">
                 <i className="fa-solid fa-arrow-right-from-bracket mr-2"></i>
                 Log Out

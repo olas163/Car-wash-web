@@ -1,5 +1,6 @@
 import React from 'react';
 import { footerList } from '../Data';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -20,9 +21,11 @@ function Footer() {
               placeholder="Enter your Email"
               className="p-3 text-lg rounded-md w-full sm:w-64 focus:outline-none focus:ring-2 focus:ring-black"
             />
-            <button className="bg-black text-white p-3 rounded-md hover:bg-gray-800 transition-colors duration-300 whitespace-nowrap">
-              Register Now
-            </button>
+            <Link to={"/profile"}>
+              <button className="bg-black text-white p-3 rounded-md hover:bg-gray-800 transition-colors duration-300 whitespace-nowrap">
+                Register Now
+              </button>
+            </Link>
           </div>
         </div>
       </div>
