@@ -186,7 +186,7 @@ const RenderBookingContent = ({
   return (
     <div className="mt-6">
       {bookedItems.length > 0 ? (
-        <div className="space-y-6 w-full md:w-full">
+        <div className="space-y-2 w-full md:w-full">
           {bookedItems.map((item, index) => (
             <div
               key={index}
