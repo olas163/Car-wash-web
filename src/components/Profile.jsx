@@ -39,13 +39,21 @@ function Profile() {
     return (
       <div className="flex justify-center items-center min-h-screen bg-gray-900 text-white">
         <div className="text-center flex flex-col items-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-white mb-4"></div>
-          <h2 className="text-2xl font-semibold">Creating your account...</h2>
-          <p className="text-gray-300 mt-2">Please wait a moment</p>
+          {/* Bouncing loader */}
+          <div className="flex items-center space-x-4 mb-6">
+            <div className="animate-bounce rounded-full h-10 w-10 bg-white " style={{animationDelay: '0s'}}></div>
+            <div className="animate-bounce rounded-full h-10 w-10 bg-white" style={{animationDelay: '0.2s'}}></div>
+            <div className="animate-bounce rounded-full h-10 w-10 bg-white" style={{animationDelay: '0.4s'}}></div>
+          </div>
+  
+          {/* Status message */}
+          <h2 className="text-3xl font-semibold text-white">Creating your account...</h2>
+          <p className="text-gray-300 mt-4 text-lg">Please wait while we authenticate your account.</p>
         </div>
       </div>
     );
   }
+
 
   return (
     <section className="flex flex-col md:flex-row justify-center items-center min-h-screen bg-gray-100 py-12 px-6 md:px-96">

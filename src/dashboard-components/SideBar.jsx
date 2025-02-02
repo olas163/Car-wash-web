@@ -135,8 +135,16 @@ function SideBar() {
 
   return (
     <div className="flex">
+      {isSidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ease-in-out"
+          onClick={toggleSidebar} // Close menu when clicking outside
+        ></div>
+      )}
+
       {/* Sidebar */}
       <div
+        onClick={toggleSidebar}
         className={`fixed left-0 top-[75px] bottom-0 bg-white z-50 transform transition-transform duration-300 ease-in-out shadow-lg w-[70%] sm:w-[40%] md:w-1/4 lg:w-1/5 
         ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
@@ -144,12 +152,11 @@ function SideBar() {
       >
         <div className="p-6">
           {/* Close Button (Visible on Mobile) */}
-          <button
-            className="absolute top-4 right-4 text-gray-700 text-xl lg:hidden"
-            onClick={toggleSidebar}
+          {/* <button
+            className="absolute top-1 right-2 text-gray-700 text-xl lg:hidden"
           >
             ✖
-          </button>
+          </button> */}
 
           <div className="flex flex-col gap-4">
             {menuItems.map((item) => (
@@ -176,7 +183,7 @@ function SideBar() {
             ))}
 
             {/* Log Out Section */}
-            <div className="mt-40">
+            <div className="ml-2 mt-72">
               <p className="flex items-center cursor-pointer text-[#00304a]">
                 <i className="fa-solid fa-arrow-right-from-bracket mr-2"></i>
                 Log Out
@@ -188,7 +195,7 @@ function SideBar() {
 
       {/* Hamburger Menu (Mobile Only) */}
       <button
-        className="fixed top-4 left-4 text-2xl text-gray-700 lg:hidden z-50"
+        className="fixed top-4  left-4 text-3xl text-gray-700 lg:hidden z-50"
         onClick={toggleSidebar}
       >
         ☰

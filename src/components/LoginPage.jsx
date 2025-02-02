@@ -17,7 +17,7 @@ function LoginPage() {
       await signInWithEmailAndPassword(auth, email, password);
       setTimeout(() => {
         setLoading(false);
-        alert("You've successfully logged in");
+        // alert("You've successfully logged in");
         navigate("/dashboard");
       });
     } catch (err) {
@@ -29,14 +29,22 @@ function LoginPage() {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen bg-gray-900 text-white">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-white mb-4"></div>
-          <h2 className="text-2xl font-semibold">Logging your account...</h2>
-          <p className="text-gray-300 mt-2">Please wait a moment</p>
+        <div className="text-center flex flex-col items-center">
+          {/* Bouncing loader */}
+          <div className="flex items-center space-x-4 mb-6">
+            <div className="animate-bounce rounded-full h-10 w-10 bg-white " style={{animationDelay: '0s'}}></div>
+            <div className="animate-bounce rounded-full h-10 w-10 bg-white" style={{animationDelay: '0.2s'}}></div>
+            <div className="animate-bounce rounded-full h-10 w-10 bg-white" style={{animationDelay: '0.4s'}}></div>
+          </div>
+  
+          {/* Status message */}
+          <h2 className="text-3xl font-semibold text-white">Logging you in...</h2>
+          <p className="text-gray-300 mt-4 text-lg">Please wait while we authenticate your account.</p>
         </div>
       </div>
     );
   }
+
 
   return (
     <section className="flex justify-center items-center min-h-screen bg-gray-100 py-12 px-6">

@@ -34,7 +34,7 @@ function DashHeader() {
 
         {/* Search Bar */}
         <div
-          className={`relative transition-all duration-300  ${
+          className={`relative transition-all duration-300 flex justify-center  ${
             isSearchExpanded ? "w-full" : "w-auto"
           } md:w-1/3`}
         >
@@ -45,7 +45,7 @@ function DashHeader() {
             onChange={changeSearchValue}
             className={`${
               isSearchExpanded ? "block" : "hidden"
-            } md:block w-full border-b-2 border-gray-300 px-8 py-1 focus:outline-none focus:border-[#00304a]`}
+            } md:block w-3/4 border-b-2 border-gray-300 px-8 py-1 focus:outline-none focus:border-[#00304a]`}
           />
           <i
             onClick={() => {
@@ -54,7 +54,7 @@ function DashHeader() {
                 handlerSearch();
               }
             }}
-            className={` fa-solid fa-magnifying-glass absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer  ${
+            className={` fa-solid fa-magnifying-glass absolute left-10 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer  ${
               isSearchExpanded ? "" : "hidden"
             }`}
           ></i>

@@ -301,7 +301,7 @@ const RenderBookingContent = ({
       )}
 
       <div className="flex space-x-12 mt-4">
-        <button className="border-2 block" onClick={handleClearBooking}>
+        <button className="bg-red-500 text-white font-semibold py-2 px-4 rounded-lg ml-2" onClick={handleClearBooking}>
           Clear Booking
         </button>
       </div>
